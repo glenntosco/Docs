@@ -15,6 +15,7 @@
 * [Create Provider](getting-started/create-provider.md)
 * [Create Customer](getting-started/create-customer.md)
 * [Setup Printers](getting-started/setup-printers.md)
+* [Deep Configuration](getting-started/deep-configuration.md)
 * [Role-Based Guides](getting-started/role-based-guides/README.md)
   * [Training](getting-started/role-based-guides/training.md)
 * [Workflow Best Practices Guide](getting-started/workflow-best-practices-guide/README.md)
