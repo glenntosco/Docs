@@ -16,8 +16,6 @@
 * [Create Customer](getting-started/create-customer.md)
 * [Setup Printers](getting-started/setup-printers.md)
 
-## Web Documentation
-
 ## Setup
 
 * [Active Mobile Devices](setup/active-mobile-devices.md)
