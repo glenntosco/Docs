@@ -266,7 +266,10 @@
   * [Panamá](contact-us/support/panama.md)
   * [Mexico](contact-us/support/mexico.md)
   * [Ecuador](contact-us/support/ecuador.md)
-* [Database Query Library](contact-us/database-query-library.md)
+
+***
+
+* [Database Query Library](database-query-library.md)
 
 ## REST API
 
