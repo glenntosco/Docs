@@ -1,6 +1,6 @@
 ---
 description: P4 Warehouse WMS Comprehensive Logistics & Supply Chain Glossary
-cover: broken-reference
+cover: ../.gitbook/assets/shutterstock_250505029.jpg
 coverY: -60.939794419970625
 ---
 

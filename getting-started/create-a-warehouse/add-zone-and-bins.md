@@ -9,10 +9,10 @@ description: P4 Warehouse Add Zone & Bins
 On the warehouse edit screen, click the  :new:  button in the Zones section of the screen.
 
 {% hint style="info" %}
-For a more detailed information of [Zones](broken-reference).
+For a more detailed information of [Zones](../../setup/warehouse/zones.md).
 {% endhint %}
 
-![](broken-reference)
+![](<../../.gitbook/assets/add zone.gif>)
 
 After clicking new you will get the screen in the image below, complete the zone code, mask, description, and Product Handling Type then click submit.
 
@@ -22,15 +22,15 @@ Product Handling types are By Product or by LPN. If you are not using LPN's then
 
 ### New Zone Screen
 
-![](broken-reference)
+![](<../../.gitbook/assets/new zone.gif>)
 
 Now you will see your new zone in the zone list below the warehouse setup screen.
 
-![](broken-reference)
+![](<../../.gitbook/assets/edit zone 2.gif>)
 
 Open your new Zone by clicking the link in the Code column. Here you will setup the details for the Zone.
 
-![P4 Warehouse Zone Configuration](broken-reference)
+![P4 Warehouse Zone Configuration](<../../.gitbook/assets/image (84).png>)
 
 In the zone settings screen, you will encounter various detailed settings for the zone behavior.
 

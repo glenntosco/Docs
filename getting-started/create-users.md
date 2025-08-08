@@ -4,13 +4,13 @@ description: P4 Warehouse User creation
 
 # Create Users
 
-To create a [new user](broken-reference), navigate to Setup > System > Users
+To create a [new user](../permissions/add-users.md), navigate to Setup > System > Users
 
 The Users menu lists the various user accounts created. As mentioned in the previous section, user accounts can be of type Administrator and type User. New users, can be created by selecting the “New” button from the top right or existing users can be deleted by selecting the black “X” on the right side of each listed user (additional new Administrator accounts can be deleted but the initial Administrator account cannot). To examine or edit an existing user, simply select the Username from the list.
 
-![P4 Warehouse user list](broken-reference)
+![P4 Warehouse user list](<../.gitbook/assets/image (275).png>)
 
-![P4 Warehouse user options](broken-reference)
+![P4 Warehouse user options](<../.gitbook/assets/image (193).png>)
 
 From the P4 Warehouse users list you can accomplish several tasks:
 
@@ -21,13 +21,13 @@ From the P4 Warehouse users list you can accomplish several tasks:
 
 Also, you can impersonate (click the link icon in the photo below) a user to verify permissions and help in screen layouts.
 
-![P4 Warehouse impersonate user](broken-reference)
+![P4 Warehouse impersonate user](<../.gitbook/assets/image (165).png>)
 
 
 
 On the User List screen, you can open and edit an existing user by clicking the link in user column or you can click the :new: button to add a new user.
 
-![](broken-reference)
+![](../.gitbook/assets/usersettings.gif)
 
 In the User Setup Screen there are several important sections that must be configured.
 
@@ -41,7 +41,7 @@ In the User Setup Screen there are several important sections that must be confi
 
 **Modules** - This is where the permissions are set based on the users roll in the warehouse.
 
-![P4 Warehouse Printer Assignments](broken-reference)
+![P4 Warehouse Printer Assignments](../.gitbook/assets/Printer-Assignments.gif)
 
 **Clients** - This setting is for a user that works for a specific 3PL. This setting will limit the user to only see customers, vendors, sales orders, purchase order from the one 3PL client.
 

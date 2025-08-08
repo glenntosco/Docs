@@ -5,16 +5,16 @@ description: P4 Warehouse Product Setup
 # Create a Product
 
 {% hint style="danger" %}
-Critical- If you plan to use multi-company or [3PL Clients](broken-reference) these must be setup first.
+Critical- If you plan to use multi-company or [3PL Clients](../3rd-party-logistics/clients.md) these must be setup first.
 {% endhint %}
 
 {% hint style="danger" %}
-There is more detailed Product Setup information [here](broken-reference). Below is to setup a simple unit product with no attributes assigned to the product.
+There is more detailed Product Setup information [here](../setup/products/). Below is to setup a simple unit product with no attributes assigned to the product.
 {% endhint %}
 
 To create a basic unit product open Setup > Products
 
-![P4 Warehouse Product List](broken-reference)
+![P4 Warehouse Product List](<../.gitbook/assets/Product List.gif>)
 
 In the product list screen, you can select the box(s) in the left column then click print. This will print product labels for the selected products.
 

@@ -25,11 +25,11 @@ For advanced users here is a link to the installer: [https://app.p4warehouse.com
 
 
 
-![P4 Warehouse - WMS - Printer List](broken-reference)
+![P4 Warehouse - WMS - Printer List](<../.gitbook/assets/image (23).png>)
 
 By clicking the key icon the list of the different type of labels will be displayed. Select the type of labels that should print to this printer. Click Submit at the bottom of the screen after making your label selections.
 
-![](broken-reference)
+![](<../.gitbook/assets/image (15).png>)
 
 
 
