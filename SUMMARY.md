@@ -15,6 +15,8 @@
 * [Create Provider](getting-started/create-provider.md)
 * [Create Customer](getting-started/create-customer.md)
 * [Setup Printers](getting-started/setup-printers.md)
+* [Role-Based Guides](getting-started/role-based-guides/README.md)
+  * [Training](getting-started/role-based-guides/training.md)
 
 ## Setup
 
