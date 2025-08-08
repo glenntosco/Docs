@@ -17,6 +17,8 @@
 * [Setup Printers](getting-started/setup-printers.md)
 * [Role-Based Guides](getting-started/role-based-guides/README.md)
   * [Training](getting-started/role-based-guides/training.md)
+* [Workflow Best Practices Guide](getting-started/workflow-best-practices-guide/README.md)
+  * [Best Practices](getting-started/workflow-best-practices-guide/best-practices.md)
 
 ## Setup
 
