@@ -269,12 +269,3 @@
 ## REST API
 
 * [P4Warehouse REST API](rest-api/p4warehouse-rest-api.md)
-* [Product Master](rest-api/product-master/README.md)
-  * [Create new product](rest-api/product-master/create-new-product.md)
-  * [Update or edit existing products](rest-api/product-master/update-or-edit-existing-products.md)
-  * [Retrieve a list of products](rest-api/product-master/retrieve-a-list-of-products.md)
-  * [Delete Product](rest-api/product-master/delete-product.md)
-* [Vendor Master](rest-api/vendor-master/README.md)
-  * [Create new vendor](rest-api/vendor-master/create-new-vendor.md)
-  * [Update or edit existing vendors](rest-api/vendor-master/update-or-edit-existing-vendors.md)
-  * [Retrieve a list of vendors](rest-api/vendor-master/retrieve-a-list-of-vendors.md)
