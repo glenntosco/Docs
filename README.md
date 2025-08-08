@@ -8,6 +8,87 @@ coverY: 196.0352422907489
 
 ![P4 Warehouse - The WMS of the Future](.gitbook/assets/logo_inside.png)
 
+**2.23.1**&#x20;
+* Added a configuration which controls login behaviour when license count has been exceeded
+* Added additional Log entry when a user attempts to login but no licenses are available
+* Made Truckload, Master Truckload (bol) and Supplement page available for editing
+* Updated Product Move handheld screen to provide better visibility of assigned tasks
+**2.22.1**&#x20;
+* Added a new handheld screen which allows an easier Pallet to Dock movement
+* Made Backorder button dependant on Data Entry configuration
+* Enabled Comment fields on various document types (Pick ticket, Purchase order, Customer return)
+* Added a section in Allocation screen to apply tags while allocating
+* Added a new set of configs which allow batching orders during waving into multiple waves
+* Added a configuration which enforces PRO number to be entered on Truckload before shipping
+**2.21.2**&#x20;
+* Added a new configuration which controls how BOL aggregates customer order information
+* Added a new configuration which allows automatically shipping and closing Small Parcel orders once moved to a Dockdoor
+* Added Pro bill number to Pick ticket which carriers over to Truck load and Master Truck load when generated
+* Added new consolidation rule based on Pick ticket Pro number
+**2.21.1**&#x20;
+* Added Allocation option to Small Parcel - One-Scan replenish screen
+* Added configuration which controls whether Bulk Stage Picking is enabled and visible during Waving
+* Added a way to designate Stage Bin to a wave at the time of Waving which enables Bulk Stage Picking handheld function
+* Added Bulk Stage Picking handheld function which allows picking multiple lines from a wave to a single bin
+* Added configuration which controls whether Bulk Stage should be auto picked to a tote/pallet or just moved as product
+* Added a setting on a zone level which designates the zone as Staging Area
+**2.20.1**&#x20;
+* Added a way to print pallet labels for Pick tickets and truckloads from Staging
+* Added a new handheld screen which allows shipping multiple truckloads at the same time by Tag
+**2.19.1**&#x20;
+* Added two additional handheld screens in Staging that allow printing pallet labels for Pick tickets and truckloads
+* Added prompting staging bins when doing tote merge and repackaging for pallet type totes
+* In addition to Address, truck load generation now also obeys carrier
+* Adjusted receiving on handheld for multiple lines having the same product. Now lines will deplete in sequence on Linenumber
+any over receiving will be added to the last line
+**2.18.2**&#x20;
+* Changed how Waving works. Now a dispatcher can decide how many carton and pallet labels to print during waving
+* Waving screen has been simplified and made it more flexible
+**2.18.1**&#x20;
+* Introduced a configuration which controls whether Pick and Pack operators are allowed to use Full Pallet Picking feature
+* Added a way to do Tote to Dock door in a mix mode of both Tote Pallets and LPNs
+* Allowed picking Pallets to Carton totes (in Pallet picking mode)
+**2.17.2**&#x20;
+* Added 2 new flavors of picking: Designation picking and Pallet picking
+* Added a facility to assign picker to partial picks of an order thus allowing multiple people to pick same order
+* Introduced a requirement for Pallet type totes to have a staging location (similar to LPN) so that at any given time
+a Pallet has a location
+* Modified Pick&Pack and Wave picking, from now on, if Pallet Picking is enabled, it could only be executed via Pallet Picking
+conventional Picking and Wave picking will not offer an option to pick a pallet
+**2.17.1**&#x20;
+* Added a way on handheld to over-receive POs
+* Added UserSessionId to AuditLog and refined how logins and logouts work on handheld
+* Changed how orders picked during One-Scan shipping, now the oldest order is selected during One-Scan shipping
+* Added Driver Name to Handheld shipping screen
+* Added additional 'guidance' prompts during picking to help pickers identify next steps
+**2.16.3**&#x20;
+* Added Productivity report
+* Added an ability to assign Small Parcel carriers to dock doors
+* Added configuration which requires Small Parcel pallets to be scanned to dock doors
+* Added Pallet Tie and Pallet Height to product details and packsizes
+**2.16.2**&#x20;
+* Added a facility to decorate states in grids for better visibility
+* Reworked Cycle Count audit report to surface not only the variances but also zero variance counts
+* Changed look and feel of grids for better visibility
+**2.16.1**&#x20;
+* Added support Android version 14 with additional scanning requirements
+**2.15.9**&#x20;
+* Reworked One scan replenishment screen to give a better visibility of orders roll up and Inventory availability
+* Introduced a surrogate Api Key for Integration API Gateway
+* Added a new configuration both on a global and client level which controls whether entities should automatically upload on closure
+* Added limited support for User defined fields. Currently available for Pickticket header, Purchase order header and Customer return header
+* Added support for grid sticky columns
+**2.15.8**&#x20;
+* Added additional screens that allows for easier replenishment of One Scan e-comm orders
+* Changed menu structure to consolidate E-Comm processing into a single submenu for clarity
+* Failed One Scan e-comm orders will automatically suspend if a shipping label fails to print
+* Added a way to create folder structure within Custom dashboards by separating folders with '|' character
+* Added a menu search control
+**2.15.7**&#x20;
+* Added Redis Caching for increased performance
+* Optimized Grids to retrieve less data which improves performance of the system
+* Removed Excel export feature for certain grids which may result in excessive reads from the database
+
 **2.15.6**&#x20;
 
 * &#x20;Added a way to pre-rate one line orders to optimize small parcel shipping&#x20;
