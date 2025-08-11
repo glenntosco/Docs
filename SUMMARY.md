@@ -17,9 +17,13 @@
 * [Setup Printers](getting-started/setup-printers.md)
 * [Deep Configuration](getting-started/deep-configuration.md)
 * [Role-Based Guides](getting-started/role-based-guides/README.md)
+  * [Best Practices](getting-started/role-based-guides/best-practices.md)
   * [Training](getting-started/role-based-guides/training.md)
-* [Workflow Best Practices Guide](getting-started/workflow-best-practices-guide/README.md)
-  * [Best Practices](getting-started/workflow-best-practices-guide/best-practices.md)
+
+***
+
+* [#Teant Full Guide](teant-full-guide/README.md)
+  * [Page 1](teant-full-guide/page-1.md)
 
 ## Setup
 
