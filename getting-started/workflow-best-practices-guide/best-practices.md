@@ -1,4 +1,4 @@
-# P4 Warehouse Workflow Best Practices Guide
+# Best Practices
 
 ## Overview
 
@@ -9,39 +9,43 @@ This guide provides proven best practices for optimizing warehouse workflows in 
 {% endhint %}
 
 ## Table of Contents
-- [Receiving Best Practices](#receiving-best-practices)
-- [Putaway Strategies](#putaway-strategies)
-- [Picking Optimization](#picking-optimization)
-- [Packing & Shipping](#packing--shipping)
-- [Cycle Counting Strategies](#cycle-counting-strategies)
-- [Returns Processing](#returns-processing)
-- [Cross-Docking Operations](#cross-docking-operations)
-- [Inventory Management](#inventory-management)
-- [3PL Operations](#3pl-operations)
-- [Performance Metrics](#performance-metrics)
 
----
+* [Receiving Best Practices](best-practices.md#receiving-best-practices)
+* [Putaway Strategies](best-practices.md#putaway-strategies)
+* [Picking Optimization](best-practices.md#picking-optimization)
+* [Packing & Shipping](best-practices.md#packing--shipping)
+* [Cycle Counting Strategies](best-practices.md#cycle-counting-strategies)
+* [Returns Processing](best-practices.md#returns-processing)
+* [Cross-Docking Operations](best-practices.md#cross-docking-operations)
+* [Inventory Management](best-practices.md#inventory-management)
+* [3PL Operations](best-practices.md#3pl-operations)
+* [Performance Metrics](best-practices.md#performance-metrics)
+
+***
 
 ## Receiving Best Practices
 
 ### Pre-Receiving Preparation
 
 #### Appointment Scheduling
+
 ```
 Best Practice: Schedule receiving appointments to balance workload
 ```
 
 **Implementation:**
+
 1. Use P4 Warehouse appointment system
 2. Allocate 30-minute windows per vendor
 3. Stagger LTL and parcel deliveries
 4. Reserve dock doors by carrier type
 
 **Benefits:**
-- Reduced dock congestion
-- Better labor planning
-- Improved carrier relations
-- Faster unloading
+
+* Reduced dock congestion
+* Better labor planning
+* Improved carrier relations
+* Faster unloading
 
 ### Receiving Process Flow
 
@@ -74,20 +78,21 @@ Best Practice: Schedule receiving appointments to balance workload
 
 ### Best Practices by Receiving Type
 
-| Receiving Type | Best Practice | Why It Works |
-|---------------|--------------|--------------|
-| **Blind Receiving** | Don't show expected quantities | Forces accurate counting |
-| **Cross-Dock** | Direct to shipping zone | Eliminates putaway step |
-| **LPN Receiving** | Assign LPN at dock | Maintains pallet integrity |
-| **Mixed SKU Pallets** | Break down immediately | Prevents picking errors |
-| **Decimal Products** | Use calibrated scales | Ensures weight accuracy |
-| **Expiry Products** | Check dates at receiving | Prevents expired stock entry |
+| Receiving Type        | Best Practice                  | Why It Works                 |
+| --------------------- | ------------------------------ | ---------------------------- |
+| **Blind Receiving**   | Don't show expected quantities | Forces accurate counting     |
+| **Cross-Dock**        | Direct to shipping zone        | Eliminates putaway step      |
+| **LPN Receiving**     | Assign LPN at dock             | Maintains pallet integrity   |
+| **Mixed SKU Pallets** | Break down immediately         | Prevents picking errors      |
+| **Decimal Products**  | Use calibrated scales          | Ensures weight accuracy      |
+| **Expiry Products**   | Check dates at receiving       | Prevents expired stock entry |
 
 ### Receiving Special Product Types
 
 #### Decimal/Weight-Based Products
 
 **Receiving Process:**
+
 1. Tare weight container/packaging
 2. Weigh product on calibrated scale
 3. Record weight to 2 decimal places
@@ -95,51 +100,54 @@ Best Practice: Schedule receiving appointments to balance workload
 5. Label with exact weight received
 
 **Common Weight-Based Products:**
-- Bulk chemicals (gallons/liters)
-- Fresh produce (kg/lbs)
-- Wire/cable (meters/feet)
-- Fabric (yards/meters)
-- Hardware (nuts/bolts by weight)
+
+* Bulk chemicals (gallons/liters)
+* Fresh produce (kg/lbs)
+* Wire/cable (meters/feet)
+* Fabric (yards/meters)
+* Hardware (nuts/bolts by weight)
 
 #### Expiry-Dated Products
 
 **Receiving Requirements:**
+
 1. **Mandatory Date Capture**
-   - Scan/enter expiry date
-   - System validates against minimum shelf life
-   - Auto-reject if less than customer allowance (default 70 days)
+   * Scan/enter expiry date
+   * System validates against minimum shelf life
+   * Auto-reject if less than customer allowance (default 70 days)
+2.  **Labeling Standards**
 
-2. **Labeling Standards**
-   ```
-   Label Format:
-   SKU: [Product SKU]
-   Lot: [Lot Number]
-   Exp: MM/YYYY (clearly visible)
-   Received: [Date]
-   ```
-
+    ```
+    Label Format:
+    SKU: [Product SKU]
+    Lot: [Lot Number]
+    Exp: MM/YYYY (clearly visible)
+    Received: [Date]
+    ```
 3. **Putaway Rules**
-   - Segregate by expiry month
-   - Place newer dates behind older
-   - Mark short-dated items clearly
+   * Segregate by expiry month
+   * Place newer dates behind older
+   * Mark short-dated items clearly
 
 ### Common Receiving Mistakes to Avoid
 
 ❌ **Don't:**
-- Receive without labels on products
-- Mix multiple POs on same pallet
-- Skip damage documentation
-- Close PO before putaway complete
-- Ignore expiry dates
+
+* Receive without labels on products
+* Mix multiple POs on same pallet
+* Skip damage documentation
+* Close PO before putaway complete
+* Ignore expiry dates
 
 ✅ **Do:**
-- Label everything immediately
-- Segregate by PO and client
-- Photo all damages
-- Verify putaway completion
-- Check dates on perishables
 
----
+* Label everything immediately
+* Segregate by PO and client
+* Photo all damages
+* Verify putaway completion
+* Check dates on perishables
+
+***
 
 ## Putaway Strategies
 
@@ -152,61 +160,63 @@ Best Practice: Schedule receiving appointments to balance workload
 {% endhint %}
 
 **High-Velocity Items (Most frequently picked)**
-- Place in golden zone (waist to shoulder height)
-- Closest to packing area
-- Multiple locations if needed
+
+* Place in golden zone (waist to shoulder height)
+* Closest to packing area
+* Multiple locations if needed
 
 **Medium-Velocity Items**
-- Standard picking locations
-- Single location per SKU
-- Moderate accessibility
+
+* Standard picking locations
+* Single location per SKU
+* Moderate accessibility
 
 **Low-Velocity Items**
-- Upper/lower rack positions
-- Bulk storage areas
-- Consolidate to save space
+
+* Upper/lower rack positions
+* Bulk storage areas
+* Consolidate to save space
 
 ### Slotting Optimization
 
 **Velocity-Based Slotting:**
 
-1. **Analyze Pick Frequency**
-   ```sql
-   -- Monthly velocity analysis
-   SELECT 
-       products.Sku, 
-       COUNT(*) as Picks, 
-       SUM(ptl.PickedQuantity) as Units
-   FROM PickTicketLines ptl
-       INNER JOIN PickTickets pt ON ptl.PickTicketId = pt.Id
-       JOIN Products on Products.id = ptl.ProductId
-   WHERE pt.ShippedDate >= DATEADD(month, -1, GETDATE())
-       AND pt.PickTicketState = 'Closed'
-   GROUP BY Products.Sku
-   ORDER BY Picks DESC
-   ```
+1.  **Analyze Pick Frequency**
 
+    ```sql
+    -- Monthly velocity analysis
+    SELECT 
+        products.Sku, 
+        COUNT(*) as Picks, 
+        SUM(ptl.PickedQuantity) as Units
+    FROM PickTicketLines ptl
+        INNER JOIN PickTickets pt ON ptl.PickTicketId = pt.Id
+        JOIN Products on Products.id = ptl.ProductId
+    WHERE pt.ShippedDate >= DATEADD(month, -1, GETDATE())
+        AND pt.PickTicketState = 'Closed'
+    GROUP BY Products.Sku
+    ORDER BY Picks DESC
+    ```
 2. **Consider Physical Characteristics**
-   - Heavy items → Lower positions
-   - Fragile items → Separate zone
-   - High-value → Secured area
-   - Hazmat → Compliant storage
-
+   * Heavy items → Lower positions
+   * Fragile items → Separate zone
+   * High-value → Secured area
+   * Hazmat → Compliant storage
 3. **Family Grouping**
-   - Items often ordered together
-   - Same customer's products (3PL)
-   - Compatible storage requirements
+   * Items often ordered together
+   * Same customer's products (3PL)
+   * Compatible storage requirements
 
 ### Putaway Methods Comparison
 
-| Method | When to Use | Advantages | Disadvantages |
-|--------|------------|------------|---------------|
-| **Directed** | High volume, multiple zones | Optimal space utilization | Requires setup |
-| **Suggested** | Medium volume | Flexibility with guidance | May not optimize |
-| **Random** | Low SKU count | Simple, fast | Inefficient space use |
-| **Fixed** | Stable inventory | Predictable locations | Poor space utilization |
+| Method        | When to Use                 | Advantages                | Disadvantages          |
+| ------------- | --------------------------- | ------------------------- | ---------------------- |
+| **Directed**  | High volume, multiple zones | Optimal space utilization | Requires setup         |
+| **Suggested** | Medium volume               | Flexibility with guidance | May not optimize       |
+| **Random**    | Low SKU count               | Simple, fast              | Inefficient space use  |
+| **Fixed**     | Stable inventory            | Predictable locations     | Poor space utilization |
 
----
+***
 
 ## Picking Optimization
 
@@ -229,22 +239,25 @@ Many Orders × High Volume = Zone Picking
 #### Wave Planning Strategy
 
 **Morning Wave (7:00 AM - 10:00 AM)**
-- Priority/express orders
-- Same-day shipping
-- Small parcel carriers
-- 2-3 hour wave duration
+
+* Priority/express orders
+* Same-day shipping
+* Small parcel carriers
+* 2-3 hour wave duration
 
 **Midday Wave (10:00 AM - 2:00 PM)**
-- Standard orders
-- LTL shipments
-- Larger orders
-- 4-hour wave duration
+
+* Standard orders
+* LTL shipments
+* Larger orders
+* 4-hour wave duration
 
 **Afternoon Wave (2:00 PM - 5:00 PM)**
-- Next-day orders
-- Bulk/pallet orders
-- Cross-dock transfers
-- 3-hour wave duration
+
+* Next-day orders
+* Bulk/pallet orders
+* Cross-dock transfers
+* 3-hour wave duration
 
 #### Wave Configuration
 
@@ -277,54 +290,56 @@ Key: Minimize backtracking, use serpentine pattern
 
 **Batch Size Guidelines:**
 
-| Order Characteristics | Optimal Batch Size | Container Type |
-|---------------------|-------------------|----------------|
-| 1-3 items per order | 8-12 orders | Multi-compartment cart |
-| 4-10 items per order | 4-8 orders | Standard cart |
-| 10+ items per order | 2-4 orders | Pallet jack |
-| Mixed sizes | 6-8 orders | Flexible totes |
-| Decimal quantities | 2-4 orders | Scale-equipped cart |
+| Order Characteristics | Optimal Batch Size | Container Type         |
+| --------------------- | ------------------ | ---------------------- |
+| 1-3 items per order   | 8-12 orders        | Multi-compartment cart |
+| 4-10 items per order  | 4-8 orders         | Standard cart          |
+| 10+ items per order   | 2-4 orders         | Pallet jack            |
+| Mixed sizes           | 6-8 orders         | Flexible totes         |
+| Decimal quantities    | 2-4 orders         | Scale-equipped cart    |
 
 ### Special Picking Considerations
 
 #### Picking Decimal/Weight Products
 
 **Weight-Based Picking Process:**
+
 1. **Equipment Required**
-   - Mobile scale or scale stations
-   - Tare weight containers
-   - Label printer for actual weight
+   * Mobile scale or scale stations
+   * Tare weight containers
+   * Label printer for actual weight
+2.  **Picking Steps**
 
-2. **Picking Steps**
-   ```
-   1. Scan product location
-   2. Place container on scale
-   3. Zero/tare scale
-   4. Pick required weight (±tolerance)
-   5. Print weight label
-   6. Apply to container
-   7. Confirm pick in system
-   ```
-
+    ```
+    1. Scan product location
+    2. Place container on scale
+    3. Zero/tare scale
+    4. Pick required weight (±tolerance)
+    5. Print weight label
+    6. Apply to container
+    7. Confirm pick in system
+    ```
 3. **Accuracy Tips**
-   - Allow 2% variance for moisture loss
-   - Round to nearest 0.01 for billing
-   - Document any significant variance
-   - Reweigh at packing if needed
+   * Allow 2% variance for moisture loss
+   * Round to nearest 0.01 for billing
+   * Document any significant variance
+   * Reweigh at packing if needed
 
 #### Picking Expiry-Dated Products
 
 **FEFO Pick Enforcement:**
+
 1. System shows oldest expiry first
 2. Picker must scan lot/expiry label
 3. System validates correct FEFO sequence
 4. Override requires supervisor approval
 
 **Near-Expiry Alerts:**
-- **Red Flag**: <30 days to expiry
-- **Yellow Flag**: 31-60 days to expiry  
-- **Customer Check**: Verify accepts short dates
-- **Document**: Note any short-date shipments
+
+* **Red Flag**: <30 days to expiry
+* **Yellow Flag**: 31-60 days to expiry
+* **Customer Check**: Verify accepts short dates
+* **Document**: Note any short-date shipments
 
 ### Zone Picking Implementation
 
@@ -348,12 +363,13 @@ Zone C: Slow-moving/Bulk items
 #### Zone Consolidation
 
 **Best Practice: Progressive Assembly**
+
 1. Zone A picks → Tote 1
 2. Pass to Zone B → Add items
 3. Pass to Zone C → Complete order
 4. Final QC at packing
 
----
+***
 
 ## Packing & Shipping
 
@@ -387,33 +403,35 @@ If fragile = true → Add 20% volume for padding
 #### Packing Efficiency Metrics
 
 Target Metrics:
-- Box fill rate: >65%
-- Void fill usage: <15% by volume
-- Packing time: <2 minutes per order
-- Accuracy rate: >99.5%
+
+* Box fill rate: >65%
+* Void fill usage: <15% by volume
+* Packing time: <2 minutes per order
+* Accuracy rate: >99.5%
 
 ### Shipping Optimization
 
 #### Carrier Selection Logic
 
-| Service Needed | Weight | Distance | Best Carrier |
-|---------------|--------|----------|--------------|
-| Next day | <5 lbs | Any | Express parcel |
-| 2-day | <150 lbs | <500 mi | Regional carrier |
-| 3-5 day | <150 lbs | Any | National parcel |
-| Economy | >150 lbs | Any | LTL freight |
-| Bulk | Full pallet | Any | TL freight |
+| Service Needed | Weight      | Distance | Best Carrier     |
+| -------------- | ----------- | -------- | ---------------- |
+| Next day       | <5 lbs      | Any      | Express parcel   |
+| 2-day          | <150 lbs    | <500 mi  | Regional carrier |
+| 3-5 day        | <150 lbs    | Any      | National parcel  |
+| Economy        | >150 lbs    | Any      | LTL freight      |
+| Bulk           | Full pallet | Any      | TL freight       |
 
 #### Load Planning
 
 **Truck Loading Best Practices:**
+
 1. Heaviest pallets first (floor level)
 2. Build stable columns
 3. Similar destinations together
 4. LIFO for multi-stop routes
 5. Secure with load bars
 
----
+***
 
 ## Cycle Counting Strategies
 
@@ -433,20 +451,22 @@ Example: (1000 + 2000 + 5000) / 250 = 32 counts/day
 #### Trigger-Based Counting
 
 **Automatic Triggers:**
-- Zero inventory locations
-- Negative inventory alerts
-- High-value threshold exceeded
-- Receiving discrepancies
-- Customer complaints
+
+* Zero inventory locations
+* Negative inventory alerts
+* High-value threshold exceeded
+* Receiving discrepancies
+* Customer complaints
 
 #### Opportunistic Counting
 
 Count when:
-- Bin becomes empty
-- Before replenishment
-- After picking errors
-- During slow periods
-- When picker reports discrepancy
+
+* Bin becomes empty
+* Before replenishment
+* After picking errors
+* During slow periods
+* When picker reports discrepancy
 
 ### Cycle Count Execution
 
@@ -477,18 +497,20 @@ Count when:
 ### Accuracy Improvement
 
 **Target Accuracy Levels:**
-- Location accuracy: >99%
-- Quantity accuracy: >98%
-- SKU accuracy: >99.5%
+
+* Location accuracy: >99%
+* Quantity accuracy: >98%
+* SKU accuracy: >99.5%
 
 **Improvement Actions:**
+
 1. Training on count procedures
 2. Better bin labeling
 3. Reduce bin sharing
 4. Implement verification scans
 5. Regular accuracy reporting
 
----
+***
 
 ## Returns Processing
 
@@ -524,24 +546,25 @@ Count when:
 
 ### Returns Categories & Handling
 
-| Return Type | Inspection Level | Typical Action | Location |
-|------------|-----------------|----------------|----------|
-| Unopened | Visual only | Restock | Prime picking |
-| Opened/complete | Full inspection | Test & restock | Secondary |
-| Damaged | Document fully | Vendor claim | Quarantine |
-| Wrong item | Verify error | Restock + investigate | Prime |
-| Defective | Test if possible | RTV or dispose | RTV area |
+| Return Type     | Inspection Level | Typical Action        | Location      |
+| --------------- | ---------------- | --------------------- | ------------- |
+| Unopened        | Visual only      | Restock               | Prime picking |
+| Opened/complete | Full inspection  | Test & restock        | Secondary     |
+| Damaged         | Document fully   | Vendor claim          | Quarantine    |
+| Wrong item      | Verify error     | Restock + investigate | Prime         |
+| Defective       | Test if possible | RTV or dispose        | RTV area      |
 
 ### Returns Metrics to Track
 
 Key Performance Indicators:
-- Return rate by SKU
-- Processing time (receipt to disposition)
-- Return to stock percentage
-- Cost per return
-- Return reasons analysis
 
----
+* Return rate by SKU
+* Processing time (receipt to disposition)
+* Return to stock percentage
+* Cost per return
+* Return reasons analysis
+
+***
 
 ## Cross-Docking Operations
 
@@ -550,17 +573,19 @@ Key Performance Indicators:
 #### Suitable Products for Cross-Docking
 
 ✅ **Ideal Candidates:**
-- Pre-allocated inventory
-- High-velocity items
-- Promotional products
-- Seasonal items
-- Perishables
+
+* Pre-allocated inventory
+* High-velocity items
+* Promotional products
+* Seasonal items
+* Perishables
 
 ❌ **Poor Candidates:**
-- Items requiring QC
-- Mixed SKU pallets
-- Small quantities
-- Items needing repackaging
+
+* Items requiring QC
+* Mixed SKU pallets
+* Small quantities
+* Items needing repackaging
 
 ### Cross-Dock Execution
 
@@ -598,7 +623,7 @@ Staging Time Limits:
 4. **Technology**: RF scanning throughout
 5. **Space**: Adequate staging area
 
----
+***
 
 ## Inventory Management
 
@@ -627,25 +652,29 @@ Maximum = 350 + 500 = 850 units
 Use the velocity analysis query to categorize products:
 
 **High-Velocity (>100 picks/month):**
-- Review min/max weekly
-- Higher safety stock (20-30%)
-- Smaller, more frequent orders
+
+* Review min/max weekly
+* Higher safety stock (20-30%)
+* Smaller, more frequent orders
 
 **Medium-Velocity (20-100 picks/month):**
-- Review min/max monthly
-- Standard safety stock (15-20%)
-- Balance order frequency with carrying cost
+
+* Review min/max monthly
+* Standard safety stock (15-20%)
+* Balance order frequency with carrying cost
 
 **Low-Velocity (<20 picks/month):**
-- Review min/max quarterly
-- Lower safety stock (10-15%)
-- Larger, less frequent orders
+
+* Review min/max quarterly
+* Lower safety stock (10-15%)
+* Larger, less frequent orders
 
 ### Inventory Optimization Strategies
 
 #### Slow-Moving Inventory
 
 **Identification Query:**
+
 ```sql
 -- Identify products with no movement in specified days
 DECLARE @DaysWithoutMovement INT = 90;
@@ -706,12 +735,14 @@ ORDER BY
 ```
 
 **Key Points:**
-- Uses AuditRecords to track actual product movements
-- Identifies products with no movement in 90+ days
-- Shows current quantity and days since last movement
-- Groups by warehouse for multi-warehouse operations
+
+* Uses AuditRecords to track actual product movements
+* Identifies products with no movement in 90+ days
+* Shows current quantity and days since last movement
+* Groups by warehouse for multi-warehouse operations
 
 **Actions for Slow-Moving Inventory:**
+
 1. Review with purchasing team
 2. Check for expired or near-expiry dates
 3. Consider promotional pricing
@@ -723,13 +754,14 @@ ORDER BY
 #### Dead Stock Management
 
 **Quarterly Review Process:**
+
 1. Identify items with no movement >180 days
 2. Check for expired products first
 3. Determine disposition:
-   - Return to vendor (if possible)
-   - Discount deeply
-   - Donate for tax write-off
-   - Dispose properly (especially expired items)
+   * Return to vendor (if possible)
+   * Discount deeply
+   * Donate for tax write-off
+   * Dispose properly (especially expired items)
 4. Update purchasing rules
 5. Document lessons learned
 
@@ -738,60 +770,61 @@ ORDER BY
 #### Inventory Control for Weight-Based Items
 
 **Challenges with Decimal Products:**
-- Natural weight loss (evaporation, moisture)
-- Measurement variations between scales
-- Partial quantity picks
-- Unit conversion errors (kg to lbs)
-- Minimum sellable quantities
+
+* Natural weight loss (evaporation, moisture)
+* Measurement variations between scales
+* Partial quantity picks
+* Unit conversion errors (kg to lbs)
+* Minimum sellable quantities
 
 **Best Practices:**
 
-1. **Establish Variance Tolerances**
-   ```
-   Product Type          Acceptable Variance
-   Dry Goods            ±1%
-   Liquids              ±2%
-   Fresh Products       ±3%
-   Frozen Products      ±2%
-   Chemicals            ±0.5%
-   ```
+1.  **Establish Variance Tolerances**
 
+    ```
+    Product Type          Acceptable Variance
+    Dry Goods            ±1%
+    Liquids              ±2%
+    Fresh Products       ±3%
+    Frozen Products      ±2%
+    Chemicals            ±0.5%
+    ```
 2. **Scale Management**
-   - Calibrate scales weekly
-   - Use same scale type for receiving/picking
-   - Document scale ID in transactions
-   - Maintain calibration logs
+   * Calibrate scales weekly
+   * Use same scale type for receiving/picking
+   * Document scale ID in transactions
+   * Maintain calibration logs
+3.  **System Configuration**
 
-3. **System Configuration**
-   ```
-   Product Setup:
-   - Enable Decimal Quantities
-   - Set Minimum Order Qty (MOQ)
-   - Define Unit of Measure (UOM)
-   - Configure Conversion Rules
-   - Set Rounding Rules (0.01 or 0.1)
-   ```
-
+    ```
+    Product Setup:
+    - Enable Decimal Quantities
+    - Set Minimum Order Qty (MOQ)
+    - Define Unit of Measure (UOM)
+    - Configure Conversion Rules
+    - Set Rounding Rules (0.01 or 0.1)
+    ```
 4. **Inventory Reconciliation**
-   - Daily weight checks for high-value items
-   - Weekly variance reports
-   - Monthly physical weight counts
-   - Investigate variances >tolerance
+   * Daily weight checks for high-value items
+   * Weekly variance reports
+   * Monthly physical weight counts
+   * Investigate variances >tolerance
 
 ### Lot & Expiry Management
 
 #### FEFO Implementation
 
 **Best Practices:**
-- Configure expiry alerts:
-  - 90 days before expiry - Planning alert
-  - 60 days - Sales expedite alert  
-  - 30 days - Critical action required
-  - 0 days - Automatic quarantine
-- Allocate oldest first automatically
-- Quarantine expired items immediately
-- Generate monthly expiry reports
-- Set customer-specific expiry allowances
+
+* Configure expiry alerts:
+  * 90 days before expiry - Planning alert
+  * 60 days - Sales expedite alert
+  * 30 days - Critical action required
+  * 0 days - Automatic quarantine
+* Allocate oldest first automatically
+* Quarantine expired items immediately
+* Generate monthly expiry reports
+* Set customer-specific expiry allowances
 
 **Expiry Management Workflow:**
 
@@ -816,6 +849,7 @@ ORDER BY
 ```
 
 **Customer Expiry Settings:**
+
 ```
 Setup > Customers > [Customer Name] > Settings
 - Default Allowance: 70 days
@@ -828,13 +862,15 @@ Setup > Customers > [Customer Name] > Settings
 #### Lot Tracking Best Practices
 
 **When to Use Lot Tracking:**
-- Regulatory requirements (FDA, pharmaceutical)
-- Quality control needs
-- Recall management
-- Warranty tracking
-- Batch production items
+
+* Regulatory requirements (FDA, pharmaceutical)
+* Quality control needs
+* Recall management
+* Warranty tracking
+* Batch production items
 
 **Lot Number Standards:**
+
 ```
 Format Examples:
 - Manufacturing: YYYYMMDD-SHIFT-LINE
@@ -842,38 +878,42 @@ Format Examples:
 - Production: PROD-YYYYMMDD-BATCH
 ```
 
----
+***
 
 ## 3PL Operations
 
 ### Client Onboarding Workflow
 
 #### Week 1: Setup
-- [ ] Create client profile
-- [ ] Configure billing profiles
-- [ ] Assign warehouse space
-- [ ] Setup user accounts
-- [ ] Import product catalog
+
+* [ ] Create client profile
+* [ ] Configure billing profiles
+* [ ] Assign warehouse space
+* [ ] Setup user accounts
+* [ ] Import product catalog
 
 #### Week 2: Testing
-- [ ] Test receiving process
-- [ ] Process sample orders
-- [ ] Validate billing calculations
-- [ ] Train client on portal
-- [ ] Document procedures
+
+* [ ] Test receiving process
+* [ ] Process sample orders
+* [ ] Validate billing calculations
+* [ ] Train client on portal
+* [ ] Document procedures
 
 #### Week 3: Go-Live
-- [ ] Final data import
-- [ ] Inventory transfer
-- [ ] Enable integrations
-- [ ] Monitor first transactions
-- [ ] Daily check-ins
+
+* [ ] Final data import
+* [ ] Inventory transfer
+* [ ] Enable integrations
+* [ ] Monitor first transactions
+* [ ] Daily check-ins
 
 ### Multi-Client Best Practices
 
 #### Segregation Strategies
 
 **Physical Segregation:**
+
 ```
 Client A: Aisles A-C
 Client B: Aisles D-F
@@ -882,32 +922,36 @@ Shared: Packing/shipping
 ```
 
 **System Segregation:**
-- Unique client codes
-- Separate billing
-- Client-specific reports
-- Restricted user access
-- Isolated integrations
+
+* Unique client codes
+* Separate billing
+* Client-specific reports
+* Restricted user access
+* Isolated integrations
 
 ### 3PL Billing Accuracy
 
 #### Billing Validation Checklist
 
 Daily:
-- [ ] Verify all transactions captured
-- [ ] Check special handling charges
-- [ ] Confirm storage calculations
+
+* [ ] Verify all transactions captured
+* [ ] Check special handling charges
+* [ ] Confirm storage calculations
 
 Weekly:
-- [ ] Review billing exceptions
-- [ ] Audit sample transactions
-- [ ] Update rates if changed
+
+* [ ] Review billing exceptions
+* [ ] Audit sample transactions
+* [ ] Update rates if changed
 
 Monthly:
-- [ ] Generate draft invoices
-- [ ] Client approval process
-- [ ] Post final invoices
 
----
+* [ ] Generate draft invoices
+* [ ] Client approval process
+* [ ] Post final invoices
+
+***
 
 ## Performance Metrics
 
@@ -915,115 +959,113 @@ Monthly:
 
 #### Receiving Metrics
 
-| Metric | Target | Calculation |
-|--------|--------|------------|
-| Receipt to putaway time | <4 hours | Time from dock to location |
-| Receiving accuracy | >99% | Correct receipts / Total |
-| Cost per receipt | Baseline -10% | Labor + overhead / Receipts |
-| Dock to stock time | <24 hours | Receipt to available |
-| Weight variance (decimal) | <2% | Actual vs Expected weight |
-| Expiry capture rate | 100% | Products with dates / Required |
+| Metric                    | Target        | Calculation                    |
+| ------------------------- | ------------- | ------------------------------ |
+| Receipt to putaway time   | <4 hours      | Time from dock to location     |
+| Receiving accuracy        | >99%          | Correct receipts / Total       |
+| Cost per receipt          | Baseline -10% | Labor + overhead / Receipts    |
+| Dock to stock time        | <24 hours     | Receipt to available           |
+| Weight variance (decimal) | <2%           | Actual vs Expected weight      |
+| Expiry capture rate       | 100%          | Products with dates / Required |
 
 #### Picking Metrics
 
-| Metric | Target | Calculation |
-|--------|--------|------------|
-| Pick rate | >60 picks/hour | Total picks / Hours |
-| Pick accuracy | >99.5% | Correct picks / Total |
-| Order cycle time | <2 hours | Order release to pack |
-| Lines per hour | >30 | Lines picked / Hours |
-| Weight pick accuracy | ±2% | Within tolerance / Total |
-| FEFO compliance | >99% | Correct date picks / Total |
+| Metric               | Target         | Calculation                |
+| -------------------- | -------------- | -------------------------- |
+| Pick rate            | >60 picks/hour | Total picks / Hours        |
+| Pick accuracy        | >99.5%         | Correct picks / Total      |
+| Order cycle time     | <2 hours       | Order release to pack      |
+| Lines per hour       | >30            | Lines picked / Hours       |
+| Weight pick accuracy | ±2%            | Within tolerance / Total   |
+| FEFO compliance      | >99%           | Correct date picks / Total |
 
 #### Shipping Metrics
 
-| Metric | Target | Calculation |
-|--------|--------|------------|
-| On-time shipment | >98% | Shipped on time / Total |
-| Shipping accuracy | >99.5% | Correct ships / Total |
-| Cost per shipment | Competitive | Total cost / Shipments |
-| Dock time | <30 min | Arrival to departure |
+| Metric            | Target      | Calculation             |
+| ----------------- | ----------- | ----------------------- |
+| On-time shipment  | >98%        | Shipped on time / Total |
+| Shipping accuracy | >99.5%      | Correct ships / Total   |
+| Cost per shipment | Competitive | Total cost / Shipments  |
+| Dock time         | <30 min     | Arrival to departure    |
 
 #### Inventory Metrics
 
-| Metric | Target | Calculation |
-|--------|--------|------------|
-| Inventory accuracy | >99% | Accurate counts / Total |
-| Expired product % | <0.5% | Expired value / Total value |
-| Shrinkage (weight) | <2% | Weight loss / Total weight |
-| Days to expiry | >90 avg | Average remaining shelf life |
-| Cycle count accuracy | >98% | Correct counts / Total |
+| Metric               | Target  | Calculation                  |
+| -------------------- | ------- | ---------------------------- |
+| Inventory accuracy   | >99%    | Accurate counts / Total      |
+| Expired product %    | <0.5%   | Expired value / Total value  |
+| Shrinkage (weight)   | <2%     | Weight loss / Total weight   |
+| Days to expiry       | >90 avg | Average remaining shelf life |
+| Cycle count accuracy | >98%    | Correct counts / Total       |
 
 ### Dashboard Configuration
 
 **Executive Dashboard:**
-- Orders shipped today
-- Inventory accuracy
-- Open order aging
-- Labor efficiency
-- Space utilization
+
+* Orders shipped today
+* Inventory accuracy
+* Open order aging
+* Labor efficiency
+* Space utilization
 
 **Operational Dashboard:**
-- Current pick queue
-- Receiving backlog
-- Packing stations active
-- Cycle count progress
-- Returns pending
+
+* Current pick queue
+* Receiving backlog
+* Packing stations active
+* Cycle count progress
+* Returns pending
 
 **3PL Client Dashboard:**
-- Inventory levels
-- Order status
-- Billing preview
-- Performance metrics
-- Transaction history
 
----
+* Inventory levels
+* Order status
+* Billing preview
+* Performance metrics
+* Transaction history
+
+***
 
 ## Continuous Improvement
 
 ### Monthly Review Process
 
 1. **Gather Data**
-   - Export KPIs
-   - Collect feedback
-   - Review errors
-   - Analyze trends
-
+   * Export KPIs
+   * Collect feedback
+   * Review errors
+   * Analyze trends
 2. **Identify Opportunities**
-   - Bottom 20% performance
-   - Repeated errors
-   - Customer complaints
-   - Cost overruns
-
+   * Bottom 20% performance
+   * Repeated errors
+   * Customer complaints
+   * Cost overruns
 3. **Implement Changes**
-   - Test in small area
-   - Measure impact
-   - Roll out if successful
-   - Document new process
-
+   * Test in small area
+   * Measure impact
+   * Roll out if successful
+   * Document new process
 4. **Monitor Results**
-   - Track for 30 days
-   - Adjust if needed
-   - Standardize success
-   - Share learnings
+   * Track for 30 days
+   * Adjust if needed
+   * Standardize success
+   * Share learnings
 
 ### Training & Development
 
 **New Employee Training Path:**
 
-Week 1: System basics, safety, warehouse tour
-Week 2: Receiving and putaway
-Week 3: Picking and packing
-Week 4: Shipping and special processes
+Week 1: System basics, safety, warehouse tour Week 2: Receiving and putaway Week 3: Picking and packing Week 4: Shipping and special processes
 
 **Ongoing Training:**
-- Monthly safety topics
-- New feature training
-- Cross-training programs
-- Performance coaching
-- Best practice sharing
 
----
+* Monthly safety topics
+* New feature training
+* Cross-training programs
+* Performance coaching
+* Best practice sharing
+
+***
 
 {% hint style="success" %}
 **Remember**: Best practices are guidelines, not rules. Continuously measure, adjust, and improve based on your specific operation's needs and constraints. What matters most is consistent execution and continuous improvement.
