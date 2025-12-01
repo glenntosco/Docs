@@ -1,5 +1,5 @@
 ---
-description: P4 Warehouse Create Provider
+description: P4 Warehouse Create Provider / Vendor
 ---
 
 # Create Provider
