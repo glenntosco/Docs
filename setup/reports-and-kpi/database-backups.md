@@ -32,5 +32,9 @@ You will find database backups under Setup/System/Database backups
 
 By clicking the download button, you will save the backup to your local computer.
 
+{% hint style="info" %}
+This is a bacpac file that can be restored onto SQL 2008 R2 or newer.&#x20;
+{% endhint %}
+
 
 
