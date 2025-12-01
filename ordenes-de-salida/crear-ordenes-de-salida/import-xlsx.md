@@ -5,3 +5,7 @@ By importing the PickTickets you can mass import hundreds of orders at once.&#x2
 
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+The excel import template can be obtained from your P4 Warehouse Partner.
+{% endhint %}
