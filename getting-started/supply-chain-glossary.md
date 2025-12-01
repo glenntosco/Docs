@@ -12,69 +12,69 @@ Whether you’re a new warehouse owner just starting out in logistics, or an exp
 
 [**P4 Warehouse**](https://p4warehouse.barrdega.com) has worked with countless 3PL warehouses, we know the ins and outs of the logistics and supply chain industries. Below you’ll find a glossary of industry terms and phrases of warehouse terminology.
 
-2D BARCODE: Two-dimensional barcode based on a flat set of rows of encrypted data in the form of bars and spaces, normally in a rectangular or square pattern.
+**2D BARCODE**: Two-dimensional barcode based on a flat set of rows of encrypted data in the form of bars and spaces, normally in a rectangular or square pattern.
 
-3D BARCODE: Three-dimensional barcode based on a physically embossed or stamped set of encrypted data interpreted by variations in height rather than the contrast between spaces and bars (as used in 2D barcodes). Often used in environments where labels cannot be easily attached to items.
+**3D BARCODE**: Three-dimensional barcode based on a physically embossed or stamped set of encrypted data interpreted by variations in height rather than the contrast between spaces and bars (as used in 2D barcodes). Often used in environments where labels cannot be easily attached to items.
 
-3PL (THIRD PARTY LOGISTICS):
+**3PL** (THIRD PARTY LOGISTICS):
 
 This is a business’ use of a third-party company to manage warehouses activities/inventories including distribution, warehousing, and fulfillment services.
 
-4PL (4TH PARTY LOGISTICS): Manages the logistics contract with a customer for consulting, technology, and logistics management through a series of 3PLs for warehousing storage or fulfillment. A 4PL creates a network infrastructure of 3PL warehouses for fulfilling goods and materials with optimal efficiency and a distributed geographic footprint.
+**4PL** (4TH PARTY LOGISTICS): Manages the logistics contract with a customer for consulting, technology, and logistics management through a series of 3PLs for warehousing storage or fulfillment. A 4PL creates a network infrastructure of 3PL warehouses for fulfilling goods and materials with optimal efficiency and a distributed geographic footprint.
 
-ABC ANALYSIS: To assign importance to a classification of items in an warehouse’s inventory based on certain criteria like sales or order volume.
+**ABC ANALYSIS**: To assign importance to a classification of items in an warehouse’s inventory based on certain criteria like sales or order volume.
 
-ACCEPTABLE QUALITY LEVEL (AQL): During quality assurance management, when a continuing series of product lots are considered, AQL will represent a quality level limit that, if failed, will deem the entire lot unsatisfactory.
+**ACCEPTABLE QUALITY LEVEL (AQL)**: During quality assurance management, when a continuing series of product lots are considered, AQL will represent a quality level limit that, if failed, will deem the entire lot unsatisfactory.
 
-ACCESSIBILITY: The ability of a carrier to provide service between origin and destination.
+**ACCESSIBILITY**: The ability of a carrier to provide service between origin and destination.
 
-ACCESSORIAL CHARGES: Fees from a carrier for certain logistics services such as: loading/unloading, pickup, delivery, or any other relevant charge.
+**ACCESSORIAL CHARGES**: Fees from a carrier for certain logistics services such as: loading/unloading, pickup, delivery, or any other relevant charge.
 
-ACCUMULATION BIN: A physical location used to accumulate all the parts that go into an assembly before it’s sent out to the assembly floor.
+**ACCUMULATION BIN**: A physical location used to accumulate all the parts that go into an assembly before it’s sent out to the assembly floor.
 
-ACTIVE STOCK: Goods in active pick locations of the warehouse that are ready for order fulfillment.
+**ACTIVE STOCK**: Goods in active pick locations of the warehouse that are ready for order fulfillment.
 
-ADVANCED SHIPPING NOTIFICATION (ASN): A document that’s sent to a warehouse management system (WMS) from a supplier that provides detailed information about an incoming shipment.
+**ADVANCED SHIPPING NOTIFICATION (ASN)**: A document that’s sent to a warehouse management system (WMS) from a supplier that provides detailed information about an incoming shipment.
 
-AGING: The categorization and ordering of invoices, orders, inventory, and lots based on due dates, receipt dates, expiration dates, or other criteria. Aging is used to focus a warehouse’s attention on past due and urgent items.
+**AGING**: The categorization and ordering of invoices, orders, inventory, and lots based on due dates, receipt dates, expiration dates, or other criteria. Aging is used to focus a warehouse’s attention on past due and urgent items.
 
 **ALLOCATION**: Allocations in inventory management refers to actual demand created by sales orders or work orders against a specific item. The terminology and the actual processing that controls allocations will vary from one software system to another. A standard allocation is an aggregate quantity of demand against a specific item in a specific facility, I have heard standard allocations referred to as normal allocations, soft allocations, soft commitments, regular allocations. Standard allocations do not specify that specific units will go to specific orders. A firm allocation is an allocation against specific units within a facility, such as an allocation against a specific location, lot, or serial number. Firm allocations are also referred to as specific allocations, frozen allocations, hard allocations, hard commitments, holds, reserved inventory. Standard allocations simply show that there is demand while firm allocations reserve or hold the inventory for the specific order designated.
 
-ANNIVERSARY BILLING: An annual recurring bill date that is resolved on the same day of the year as their initial sign-up or charge date.
+**ANNIVERSARY BILLING**: An annual recurring bill date that is resolved on the same day of the year as their initial sign-up or charge date.
 
-ANY-QUANTITY (AQ) RATE: A carrier rate that applies to shipments of any size; no discount rate is available- even for large shipments.
+**ANY-QUANTITY (AQ) RATE**: A carrier rate that applies to shipments of any size; no discount rate is available- even for large shipments.
 
-API (APPLICATION PROGRAMMING INTERFACE): A set of functions and procedures that allow applications to access the data of an operating system, application, or other service.
+**API** (APPLICATION PROGRAMMING INTERFACE): A set of functions and procedures that allow applications to access the data of an operating system, application, or other service.
 
-ASSEMBLE TO ORDER: A production environment where a product can be assembled after receipt of a customer’s order. The key components (bulk, semi-finished, intermediate, etc.) used in the assembly or finishing process of production are planned and usually stocked in anticipation of a customer order. Assembly of the product starts once the receipt is processed.
+**ASSEMBLE TO ORDER**: A production environment where a product can be assembled after receipt of a customer’s order. The key components (bulk, semi-finished, intermediate, etc.) used in the assembly or finishing process of production are planned and usually stocked in anticipation of a customer order. Assembly of the product starts once the receipt is processed.
 
-ATA: An acronym standing for “actual time of arrival”, or also known as the American Trucking Associations.
+**ATA**: An acronym standing for “actual time of arrival”, or also known as the American Trucking Associations.
 
-ATD: An acronym standing for “actual time of departure”.
+**ATD**: An acronym standing for “actual time of departure”.
 
-AUTO ID: Referring to an automated identification system. This includes technology such as barcoding and radio frequency tagging (RFID)
+**AUTO ID**: Referring to an automated identification system. This includes technology such as barcoding and radio frequency tagging (RFID)
 
-AUTOMATED GUIDED VEHICLE SYSTEM (AGVS): A computer-controlled materials handling system consisting of small vehicles (carts) that move along a guideway.
+**AUTOMATED GUIDED VEHICLE SYSTEM (AGVS)**: A computer-controlled materials handling system consisting of small vehicles (carts) that move along a guideway.
 
-AUTOMATED STORAGE/RETRIEVAL SYSTEM (AS/RS): A high-density rack inventory storage system with unmanned vehicles automatically loading and unloading products to/from the racks.
+**AUTOMATED STORAGE/RETRIEVAL SYSTEM (AS/RS)**: A high-density rack inventory storage system with unmanned vehicles automatically loading and unloading products to/from the racks.
 
-B2B: An acronym standing for “business-to-business” and refers to dealings between two businesses.
+**B2B**: An acronym standing for “business-to-business” and refers to dealings between two businesses.
 
-B2C: An acronym standing for “business-to-customer” and refers to dealings between a business and end consumer.
+**B2C**: An acronym standing for “business-to-customer” and refers to dealings between a business and end consumer.
 
-BACK ORDER: A product that’s been promised to ship when it first becomes available because it was out of stock when initially ordered.
+**BACK ORDER**: A product that’s been promised to ship when it first becomes available because it was out of stock when initially ordered.
 
-BALE: A large compressed, bound, and often wrapped bundle of a commodity, such as cotton or hay.
+**BALE**: A large compressed, bound, and often wrapped bundle of a commodity, such as cotton or hay.
 
-BARCODE: A series of alternating bars and spaces printed or stamped on products, labels, or other media, representing encoded information which can be read by electronic readers called bar.. A popular example is the UPC code used on retail packaging.
+**BARCODE**: A series of alternating bars and spaces printed or stamped on products, labels, or other media, representing encoded information which can be read by electronic readers called bar.. A popular example is the UPC code used on retail packaging.
 
-BARCODE PARSING: The extraction and of multiple data values from a single barcode.
+**BARCODE PARSING**: The extraction and of multiple data values from a single barcode.
 
-BARCODING: A method of encoding data for fast and accurate readability and turning such data into a barcode.
+**BARCODING**: A method of encoding data for fast and accurate readability and turning such data into a barcode.
 
-BASING-POINT PRICING: A pricing system that includes a transport costs from a city or location, even though the shipment does not originate at the basing point.
+**BASING-POINT PRICING:** A pricing system that includes a transport costs from a city or location, even though the shipment does not originate at the basing point.
 
-BATCH PICKING: The process of fulfillment order picking from a warehouse in which all the items for multiple orders are picked by a single picker.
+**BATCH PICKING**: The process of fulfillment order picking from a warehouse in which all the items for multiple orders are picked by a single picker.
 
 BATCH TERMINAL COMMUNICATIONS: The connection and transfer of information between the batch handheld and PC for purposes of warehouse management systems integrations.
 
