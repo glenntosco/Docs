@@ -41,5 +41,5 @@ Yes, we offer P4 Warehouse in three different models.&#x20;
 It is important to note models 2 and 3 do not include updates as we do not have access to your private server. Model #1 does include automatic updates meaning you always have the newest version of the software.
 
 {% hint style="info" %}
-Option 2 & 3 are only available to project over 150 users.&#x20;
+Option 2 & 3 are only available to projects over 150 users.&#x20;
 {% endhint %}
