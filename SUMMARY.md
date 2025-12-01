@@ -184,6 +184,7 @@
   * [Carriers](ordenes-de-salida/fulfillment-operational-setup/carriers.md)
 * [Pick Ticket Creation](ordenes-de-salida/crear-ordenes-de-salida/README.md)
   * [Back Order](ordenes-de-salida/crear-ordenes-de-salida/back-order.md)
+  * [Import XLSX](ordenes-de-salida/crear-ordenes-de-salida/import-xlsx.md)
 * [Allocation](ordenes-de-salida/asignacion.md)
 * [Waving](ordenes-de-salida/waving.md)
 * [Totes](ordenes-de-salida/totes-1.md)
